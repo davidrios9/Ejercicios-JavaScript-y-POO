@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Tittle</title>
+</head>
+<body>        
+<script>
+
+
+var inicio = ["unacadena",3,9,1,10,500,1,10,"a",true]; 
+var numerosInt  = new Array () ;
+var aux ;
+
+// Si los valores son númericos lo asigno al vector numerosInt
+for (var i = 0; i < inicio.length; i++){
+        
+        if (typeof inicio[i] == "number"){
+                numerosInt [i] = inicio[i];
+                console.log(numerosInt[i]);
+        }
+}
+
+//Ordeno el vector numerosInt
+for (var j = 0 ; j < numerosInt.length - 1; j++){
+        
+        for (var k = j+1 ; k < numerosInt.length; k++ ){
+           
+                if (numerosInt [j] > numerosInt [k]){
+
+                        aux = numerosInt [j];
+                        numerosInt [j] = numerosInt [k];
+                        numerosInt [k] = aux;
+                }
+        }
+}
+
+//Imprimo el vector numerosInt
+for (var l = 0 ; l<numerosInt.length ; l++){
+    console.log (numerosInt [l]);
+}
+
+
+</script>
+</body>
+</html>
