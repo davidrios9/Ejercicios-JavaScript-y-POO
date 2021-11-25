@@ -60,7 +60,7 @@
 
         }
         console.log(palindromo("Oso"));
-        
+
         //Punto 5
 
         class Persona {
@@ -111,27 +111,27 @@
 
         class Grupo  {
             profesor;
-            promedio;
             estudiantes = [];
             constructor(profesor, estudiantes) {
                 this.profesor = profesor
-                this.estudiantes = estudiantes
-                for (let j = 0; j < estudiantes.length; j++) {
-                    this.estudiantes.push(estudiantes[j])
-                }
+                this.estudiantes = estudiantes        
+                this.estudiantes.push(estudiantes)                
             }
 
             calificar (estudiantes){
-                for (let j = 0; j < estudiantes.length; j++) {
-                    estudiantes [j] =  (Math.random() * 10);
+                for (let j = 0; j < this.estudiantes.length-1; j++) {
+                    this.estudiantes [j].calificacion =  (Math.random() * 10);
+                    console.log("Estudiante: "+ this.estudiantes[j].nombre + " Tiene una calificación de: " + this.estudiantes[j].calificacion);
                 }
             }
 
             promedio(estudiantes){
-                for (let j = 0; j < estudiantes.length; j++) {
-                    let sumCalif = sumCalif +  estudiantes [j]
+                let sumCalif = 0;
+                for (let j = 0; j < estudiantes.length -1 ; j++) {
+                     sumCalif = sumCalif +  estudiantes [j].calificacion;
                 }
                 let promedio = sumCalif/estudiantes.length;
+                console.log("El promedio de las notas es: " + promedio);
             }
         }
 
@@ -148,12 +148,16 @@
         arrayEstudiantes.push(estudiante3);
         arrayEstudiantes.push(estudiante4);
         arrayEstudiantes.push(estudiante5);
-        arrayEstudiantes.push(estudiante5);
+        arrayEstudiantes.push(estudiante6);
 
-        //console.log(arrayEstudiantes);
-
+        console.log(arrayEstudiantes);
         let profesor = new Profesor("Pedro",15);
-        let grupo = new Grupo (profesor, Array(arrayEstudiantes));
+        console.log(profesor);
+        let grupo = new Grupo (profesor, arrayEstudiantes);
+        console.log(grupo);
+
+        grupo.calificar(arrayEstudiantes);
+        grupo.promedio(arrayEstudiantes);
 
       
 
