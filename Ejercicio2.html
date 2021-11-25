@@ -9,36 +9,32 @@
 
 
 var inicio = ["unacadena",3,9,1,10,500,1,10,"a",true]; 
-var numerosInt  = new Array () ;
-var aux ;
+let numerosInt  = new Array () ;
+let aux ;
 
 // Si los valores son númericos lo asigno al vector numerosInt
-for (var i = 0; i < inicio.length; i++){
+for (let i = 0; i < inicio.length; i++){
         
         if (typeof inicio[i] == "number"){
                 numerosInt [i] = inicio[i];
-                console.log(numerosInt[i]);
         }
 }
 
 //Ordeno el vector numerosInt
-for (var j = 0 ; j < numerosInt.length - 1; j++){
+for (let i = 0 ; i < numerosInt.length - 1; i++){
         
-        for (var k = j+1 ; k < numerosInt.length; k++ ){
+        for (let j = i+1 ; j < numerosInt.length; j++ ){
            
-                if (numerosInt [j] > numerosInt [k]){
-
-                        aux = numerosInt [j];
-                        numerosInt [j] = numerosInt [k];
-                        numerosInt [k] = aux;
+                if (numerosInt [i] > numerosInt [j]){
+                        aux = numerosInt [i];
+                        numerosInt [i] = numerosInt [j];
+                        numerosInt [j] = aux;
                 }
         }
 }
 
 //Imprimo el vector numerosInt
-for (var l = 0 ; l<numerosInt.length ; l++){
-    console.log (numerosInt [l]);
-}
+console.log(numerosInt);
 
 
 </script>
